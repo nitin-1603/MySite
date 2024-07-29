@@ -1,6 +1,7 @@
 // Navbar.jsx
 import { useState } from 'react';
 import '../../css components/Navbar.css';
+import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -18,9 +19,10 @@ const Navbar = () => {
                 </button>
                 <div className={`navbar-menu ${isMenuOpen ? 'open' : ''}`}>
                     <ul>
-                        <li><a href="/">Form</a></li>
-                        <li><a href="/useEffectHook">useEffect Hook</a></li>
-                        <li><a href="/useMemo">useMemo and useCallback  Hook </a></li>
+                      
+                        <li><NavLink to="/form">Form</NavLink></li>
+                        <li><NavLink to="/useEffectHook">useEffect Hook</NavLink></li>
+                        <li><NavLink to="/useMemo">useMemo and useCallback  Hook </NavLink></li>
                     </ul>
                 </div>
             </div>
