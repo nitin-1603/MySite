@@ -8,7 +8,22 @@ import {
     RouterProvider,
 } from "react-router-dom";
 
+
 const Home = () => {
+    
+    //useCallback function
+
+    // const callfunc = useCallback(
+    //     () => {
+    //         console.log('hey callfunc');
+    //     }
+    //     , []
+    // )
+
+    const callfunc = () => {
+        console.log('hey callfunc');
+    }
+
     const router = createBrowserRouter([
         {
             path: '/',
@@ -24,9 +39,11 @@ const Home = () => {
         },
         {
             path: '/usememo',
-            element: <><Navbar /> <MemoHook /></>
+            element: <><Navbar /> <MemoHook callfunc={callfunc} /></>
         }
     ])
+
+
     return (
         <>
             <RouterProvider router={router} />
