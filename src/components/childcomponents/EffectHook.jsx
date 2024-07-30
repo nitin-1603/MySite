@@ -26,7 +26,7 @@ const EffectHook = () => {
                         <th>Email</th>
                         <th >Address
                            
-                                <th >Street</th>
+                                <th           >Street</th>
                                 <th>Suite</th>
                                 <th>City</th>
                                 <th>Zipcode</th>
