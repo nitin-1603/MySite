@@ -1,28 +1,19 @@
-import Form from "./childcomponents/Form"
-import Navbar from "./childcomponents/Navbar"
-import EffectHook from "./childcomponents/EffectHook";
-import MemoHook from "./childcomponents/MemoHook";
+import Form from "./Navbarchildcomponents/Form"
+import Navbar from "./Navbarchildcomponents/Navbar"
+import EffectHook from "./Navbarchildcomponents/EffectHook";
+import MemoHook from "./Navbarchildcomponents/MemoHook";
 
 import {
     createBrowserRouter,
     RouterProvider,
 } from "react-router-dom";
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+import MobileSection from "./Body/MobileSection";
 
 
 const Home = () => {
-    
-    //useCallback function
 
-    // const callfunc = useCallback(
-    //     () => {
-    //         console.log('hey callfunc');
-    //     }
-    //     , []
-    // )
-
-    const callfunc = () => {
-        console.log('hey callfunc');
-    }
 
     const router = createBrowserRouter([
         {
@@ -39,14 +30,18 @@ const Home = () => {
         },
         {
             path: '/usememo',
-            element: <><Navbar /> <MemoHook callfunc={callfunc} /></>
+            element: <><Navbar /> <MemoHook /></>
         }
     ])
 
 
     return (
         <>
-            <RouterProvider router={router} />
+            <Provider store={store}>
+                <RouterProvider router={router} />
+                <MobileSection />
+
+            </Provider>
         </>
     )
 }

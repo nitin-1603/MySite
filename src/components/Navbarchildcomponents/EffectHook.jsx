@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react'
 import '../../css components/EffectHook.css'
 
 const EffectHook = () => {
-    const [apiData, setApiData] = useState()
+    const [apiData, setApiData] = useState([])
 
     useEffect(() => {
         const fetchData = async () => {
@@ -27,10 +27,10 @@ const EffectHook = () => {
                         <th>Email</th>
                         <th >Address
 
-                            <th>Street</th>
-                            <th>Suite</th>
-                            <th>City</th>
-                            <th>Zipcode</th>
+                            <th className='addressChild'>Street</th>
+                            <th className='addressChild'>Suite</th>
+                            <th className='addressChild'>City</th>
+                            <th className='addressChild'>Zipcode</th>
 
                         </th>
                         <th>phone</th>
@@ -53,10 +53,10 @@ const EffectHook = () => {
                                     <th>{item.email}</th>
                                     <th >
 
-                                        <th>{item.address.street}</th>
-                                        <th>{item.address.suite}</th>
-                                        <th>{item.address.city}</th>
-                                        <th>{item.address.zipcode}</th>
+                                        <th className='addressChild'>{item.address.street}</th>
+                                        <th className='addressChild'>{item.address.suite}</th>
+                                        <th className='addressChild'>{item.address.city}</th>
+                                        <th className='addressChild'>{item.address.zipcode}</th>
 
                                     </th>
                                     <th>{item.phone}</th>
