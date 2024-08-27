@@ -10,6 +10,7 @@ import {
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import MobileSection from "./Body/MobileSection";
+import Cart from "./Navbarchildcomponents/Cart";
 
 
 const Home = () => {
@@ -31,6 +32,10 @@ const Home = () => {
         {
             path: '/usememo',
             element: <><Navbar /> <MemoHook /></>
+        },
+        {
+            path: '/cart',
+            element: <><Navbar /> <Cart /></>
         }
     ])
 
