@@ -22,10 +22,15 @@
     transform: scale(0.99);
 }
 
-.card img {
+.cardImage{
+    width: 10rem;
+    height: 10rem;
+}
+
+/* .card img {
     width: 100%;
     height: auto;
-}
+} */
 
 .card-content {
     padding: 16px;
@@ -52,6 +57,7 @@
     bottom: 2px;
     margin: 5px;
 }
+
 
 
 /* Media queries for responsiveness */

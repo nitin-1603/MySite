@@ -1,0 +1,149 @@
+/* styles/Cart.css */
+
+.cartContainer {
+    padding: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .cartContainer h2 {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  
+  .cartItem {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #ddd;
+    padding: 1rem 0;
+    gap: 1rem;
+  }
+  
+  .cartItemImage {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  
+  .cartItemDetails {
+    flex: 1;
+  }
+  
+  .cartItemDetails h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .cartItemDetails p {
+    margin: 0.5rem 0;
+  }
+  
+  .cartItemDetails button {
+    padding: 0.5rem 1rem;
+    background-color: #f44336;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .cartItemDetails button:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Media Queries */
+  
+  /* For screens smaller than 576px (mobile phones) */
+  @media (max-width: 576px) {
+    .cartItem {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+  
+    .cartItemImage {
+      width: 100%;
+      height: auto;
+    }
+  
+    .cartItemDetails {
+      text-align: left;
+    }
+  
+    .cartItemDetails h3 {
+      font-size: 1rem;
+    }
+  
+    .cartItemDetails p {
+      font-size: 0.875rem;
+    }
+  
+    .cartItemDetails button {
+      font-size: 0.875rem;
+    }
+  }
+  
+  /* For screens between 576px and 768px (tablets) */
+  @media (min-width: 576px) and (max-width: 768px) {
+    .cartItem {
+      flex-direction: row;
+      gap: 1rem;
+    }
+  
+    .cartItemImage {
+      width: 120px;
+      height: 120px;
+    }
+  
+    .cartItemDetails h3 {
+      font-size: 1.1rem;
+    }
+  
+    .cartItemDetails p {
+      font-size: 0.9rem;
+    }
+  }
+  
+  /* For screens between 768px and 991px (small laptops) */
+  @media (min-width: 768px) and (max-width: 991px) {
+    .cartItem {
+      flex-direction: row;
+      gap: 1.5rem;
+    }
+  
+    .cartItemImage {
+      width: 140px;
+      height: 140px;
+    }
+  
+    .cartItemDetails h3 {
+      font-size: 1.2rem;
+    }
+  
+    .cartItemDetails p {
+      font-size: 1rem;
+    }
+  }
+  
+  /* For screens larger than 991px (large laptops and desktops) */
+  @media (min-width: 991px) {
+    .cartItem {
+      flex-direction: row;
+      gap: 2rem;
+    }
+  
+    .cartItemImage {
+      width: 160px;
+      height: 160px;
+    }
+  
+    .cartItemDetails h3 {
+      font-size: 1.3rem;
+    }
+  
+    .cartItemDetails p {
+      font-size: 1.1rem;
+    }
+  }
+  

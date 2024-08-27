@@ -23,6 +23,7 @@ const Navbar = () => {
                         <li><NavLink to="/form">Form</NavLink></li>
                         <li><NavLink to="/useEffectHook">useEffect Hook</NavLink></li>
                         <li><NavLink to="/useMemo">useMemo and useCallback  Hook </NavLink></li>
+                        <li><NavLink to="/cart">Cart Item </NavLink></li>
                     </ul>
                 </div>
             </div>
