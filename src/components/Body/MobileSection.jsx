@@ -21,18 +21,20 @@ const MobileSection = () => {
             <div className='cardBorder'>
                 {data.map((item) => {
                     return (
-
-                        <div key={item.id} className="card">
-                            <img src={item.email} alt="photo not available" />
-                            <div className="card-content">
-                                <div className="phone-name">{item.name}</div>
-                                <ul className="specs">
-                                    <li>{item.company.name}</li>
-                                    <li>{item.company.catchPhrase}</li>
-                                    <li>{item.bs}</li>
-                                </ul>
+                      
+                            <div  key={item.id} className="card">
+                                <img src={item.email} alt="photo not available" />
+                                <div className="card-content">
+                                    <div className="phone-name">{item.name}</div>
+                                    <ul className="specs">
+                                        <li> {item.company.name}</li>
+                                        <li> {item.company.catchPhrase}</li>
+                                        <li> {item.company.bs}</li>
+                                    </ul>
+                                </div>
+                                <button className='cartButton'>Add to Cart +</button>
                             </div>
-                        </div>
+                  
                     )
 
                 })}
