@@ -19,7 +19,7 @@ const Home = () => {
     const router = createBrowserRouter([
         {
             path: '/',
-            element: <><Navbar /> </>
+            element: <><Navbar /> <MobileSection /></>
         },
         {
             path: '/form',
@@ -44,7 +44,7 @@ const Home = () => {
         <>
             <Provider store={store}>
                 <RouterProvider router={router} />
-                <MobileSection />
+                
 
             </Provider>
         </>
