@@ -27,7 +27,7 @@ const Navbar = () => {
                         <li><NavLink to="/form">Form</NavLink></li>
                         <li><NavLink to="/useEffectHook">useEffect Hook</NavLink></li>
                         <li><NavLink to="/useMemo">useMemo and useCallback  Hook </NavLink></li>
-                        <li><NavLink to="/cart">Cart Item {productInCart.length} </NavLink></li>
+                        <li><NavLink to="/cart" className='cartItem'>Cart <span className='numberOfItemInCart'>{productInCart.length == 0 ? ' ' : productInCart.length}</span></NavLink></li>
                     </ul>
                 </div>
             </div>
