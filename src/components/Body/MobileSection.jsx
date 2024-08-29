@@ -1,11 +1,14 @@
 // components/MobileSection.js
 import { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
+import { useDispatch,useSelector } from 'react-redux';
 import { addItem } from '../redux/cartSlice';
 import '../../css components/MobileSection.css';
+import { selectCartItems } from '../redux/cartSlice';
 
 const MobileSection = () => {
     const [data, setData] = useState([]);
+    const dispatch = useDispatch();
+    const cartItems = useSelector(selectCartItems);
 
     useEffect(() => {
         const fetchData = async () => {
@@ -17,10 +20,18 @@ const MobileSection = () => {
         fetchData();
     }, []);
 
-    const dispatch = useDispatch();
 
     const handleAddToCart = (item) => {
-        dispatch(addItem(item));
+        const itemInCart = cartItems.some(cartItem => cartItem.id === item.id);
+
+        if (itemInCart) {
+            // Open cart in a new tab if item is already in the cart
+            const cartUrl = '/cart'; // Adjust this to the route where your cart is displayed
+            window.open(cartUrl, '_blank');
+        } else {
+            // Otherwise, add item to cart
+            dispatch(addItem(item));
+        }
     };
 
     return (
