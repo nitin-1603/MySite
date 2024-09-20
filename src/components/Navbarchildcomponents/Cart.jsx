@@ -8,10 +8,18 @@ const Cart = () => {
 
     const dispatch = useDispatch();
     const cartItems = useSelector((state) => state.cart.items);
-    const value = useSelector((state) => state.cart.value);
+    
     const handleRemoveItem = (id) => {
         dispatch(removeItem(id));
     };
+
+    const handleIncrement = (id) => {
+        dispatch(productIncrement(id));
+    }
+
+    const handleDecrement = (id) => {
+        dispatch(productDecrement(id));
+    }
 
     return (
         <div className='cartContainer'>
@@ -26,9 +34,9 @@ const Cart = () => {
                             <div className="cartItemDetails">
                                 <h3>{item.title}</h3>
                                 <p>Price: ${item.price}</p>
-                                <p>{value}</p>
-                                <button onClick={() => dispatch(productIncrement())}>+</button>
-                                <button onClick={() => dispatch(productDecrement())}>-</button>
+                                <p>{item.quantity}</p>
+                                <button onClick={() => handleIncrement(item.id)}>+</button>
+                                <button onClick={() => handleDecrement(item.id)}>-</button>
                                 <button onClick={() => handleRemoveItem(item.id)}>Remove</button>
                             </div>
                         </li>

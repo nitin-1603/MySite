@@ -16,28 +16,37 @@ const cartSlice = createSlice({
     name: 'cart',
     initialState: {
         items: loadCartFromLocalStorage(),
-        value: 0
+        
     },
     reducers: {
         addItem: (state, action) => {
-            state.items.push(action.payload);
+            const existingItem = state.items.find(item => item.id === action.payload.id);
+            if (existingItem) {
+                existingItem.quantity += 1
+            } else {
+                state.items.push({ ...action.payload, quantity: 1 })
+            }
             saveCartToLocalStorage(state.items);
         },
         removeItem: (state, action) => {
             state.items = state.items.filter(item => item.id !== action.payload);
             saveCartToLocalStorage(state.items);
         },
-        productIncrement: (state) => {
-            state.value += 1
-        },
-        productDecrement: (state) => {
-            if (state.value <= 0) {
-                state.value == 0;
-            } else {
-                state.value -= 1;
+        productIncrement: (state, action) => {
+            const item = state.items.find(item => item.id == action.payload);
+            if (item) {
+                item.quantity += 1
+                saveCartToLocalStorage(state.items);
             }
         },
-        // Other cart actions can be added here
+        productDecrement: (state, action) => {
+            const item = state.items.find(item => item.id == action.payload);
+            if (item && item.quantity > 1) {
+                item.quantity -= 1
+                saveCartToLocalStorage(state.items);
+            }
+
+        }
     },
 });
 
