@@ -1,7 +1,5 @@
-import Form from "./Navbarchildcomponents/Form"
+
 import Navbar from "./Navbarchildcomponents/Navbar"
-import EffectHook from "./Navbarchildcomponents/EffectHook";
-import MemoHook from "./Navbarchildcomponents/MemoHook";
 
 import {
     createBrowserRouter,
@@ -11,6 +9,8 @@ import { Provider } from "react-redux";
 import { store } from "./redux/store";
 import MobileSection from "./Body/MobileSection";
 import Cart from "./Navbarchildcomponents/Cart";
+import Login from "./Navbarchildcomponents/Login";
+import Signup from "./Navbarchildcomponents/Signup";
 
 
 const Home = () => {
@@ -21,22 +21,19 @@ const Home = () => {
             path: '/',
             element: <><Navbar /> <MobileSection /></>
         },
-        {
-            path: '/form',
-            element: <><Navbar /> <Form /></>
-        },
-        {
-            path: '/useEffectHook',
-            element: <><Navbar /> <EffectHook /></>
-        },
-        {
-            path: '/usememo',
-            element: <><Navbar /> <MemoHook /></>
-        },
+
         {
             path: '/cart',
             element: <><Navbar /> <Cart /></>
-        }
+        },
+        {
+            path: '/login', element: <><Navbar /> <Login /></>
+        },
+        
+        {
+            path: '/signup', element: <><Navbar /> <Signup /></>
+        },
+        
     ])
 
 
@@ -44,7 +41,7 @@ const Home = () => {
         <>
             <Provider store={store}>
                 <RouterProvider router={router} />
-                
+
 
             </Provider>
         </>

@@ -61,16 +61,11 @@
     
 }
 
-.cartItem {
-    /* position: relative; */
-    /* text-decoration: none; */
-    margin-right: 2rem;
-    /* border: none; */
-}
+
 
 .numberOfItemInCart {
     position: absolute;
-    color: red;
+    color: rgb(198, 21, 21);
     padding: 2px;
     top: 0%;
 }
